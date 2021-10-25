@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title> JQuery Test  </title>
+   <style>
+      #bdy{
+         background-color: palegreen;
+         position: relative;
+         border: 1px solid black;
+      }
+   </style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type = "text/javascript">
+
+		    // ready func call when document is ready to render
+         $(document).ready(function() 
+         {     
+               // Parent()
+               $('#btnparent').click(function(){
+                  $('#divD').parent().css('color','red');
+               });
+               // Parents()
+               $('#btnparents').click(function(){
+                  $('#divD').parents().css('color','blue');
+               });
+                // ParentsUntill()
+                $('#btnparentUntill').click(function(){
+                  $('#divD').parentsUntil('#divA').css('color','green');
+               });
+               // OffsetParent()
+               $('#btnOffSetparent').click(function(){
+                  $('#divD').offsetParent().css('color','pink');
+               });
+               // closet()
+               $('#btnCloset').click(function(){
+                  $('#divD').closest('div').css('color','orange');
+               });
+         });
+     </script>
+<head>
+   <body>
+   <div id="divA" style="background-color: palegreen;">
+      <h3> Div A</h3>
+      <div id="divB" style="background-color: rgb(126, 149, 192); position: relative;">
+         <h3> Div B</h3>
+         <div id="divC" style="background-color: rgb(206, 191, 126);">
+            <h3> Div C</h3>
+            <div id="divD" style="background-color: rgb(145, 207, 145);">
+               <h3> Div D</h3>
+            </div>
+         </div>
+      </div>
+   </div>
+   <button id="btnparent"> Parent </button> 
+   <button id="btnparents"> Parents </button> 
+   <button id="btnparentUntill"> Parent Untill </button> 
+   <button id="btnCloset"> Closet </button> 
+   <button id="btnOffSetparent"> Ofset Parent </button> 
+</body>
+</html>
